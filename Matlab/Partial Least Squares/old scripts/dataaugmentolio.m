@@ -1,0 +1,1 @@
+[X_aug, Y_aug] = dataaugment(X_cal, Y_cal, (0.1*std2(X_cal)), 0.05, (0.1*std2(X_cal)), 9, 1);

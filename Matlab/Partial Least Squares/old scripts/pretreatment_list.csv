@@ -1,0 +1,537 @@
+Normalize (1-Norm, Area = 1)#none#none
+SNV#none#none
+MSC (mean)#none#none
+none#1st Derivative (order: 2, window: 25 pt, incl only)#none
+none#1st Derivative (order: 2, window: 27 pt, incl only)#none
+none#1st Derivative (order: 2, window: 29 pt, incl only)#none
+none#1st Derivative (order: 2, window: 31 pt, incl only)#none
+none#1st Derivative (order: 2, window: 33 pt, incl only)#none
+none#1st Derivative (order: 2, window: 35 pt, incl only)#none
+none#1st Derivative (order: 2, window: 37 pt, incl only)#none
+none#1st Derivative (order: 2, window: 39 pt, incl only)#none
+none#1st Derivative (order: 2, window: 41 pt, incl only)#none
+none#1st Derivative (order: 2, window: 43 pt, incl only)#none
+none#1st Derivative (order: 2, window: 45 pt, incl only)#none
+none#2st Derivative (order: 2, window: 25 pt, incl only)#none
+none#2st Derivative (order: 2, window: 27 pt, incl only)#none
+none#2st Derivative (order: 2, window: 29 pt, incl only)#none
+none#2st Derivative (order: 2, window: 31 pt, incl only)#none
+none#2st Derivative (order: 2, window: 33 pt, incl only)#none
+none#2st Derivative (order: 2, window: 35 pt, incl only)#none
+none#2st Derivative (order: 2, window: 37 pt, incl only)#none
+none#2st Derivative (order: 2, window: 39 pt, incl only)#none
+none#2st Derivative (order: 2, window: 41 pt, incl only)#none
+none#2st Derivative (order: 2, window: 43 pt, incl only)#none
+none#2st Derivative (order: 2, window: 45 pt, incl only)#none
+none#3st Derivative (order: 2, window: 25 pt, incl only)#none
+none#3st Derivative (order: 2, window: 27 pt, incl only)#none
+none#3st Derivative (order: 2, window: 29 pt, incl only)#none
+none#3st Derivative (order: 2, window: 31 pt, incl only)#none
+none#3st Derivative (order: 2, window: 33 pt, incl only)#none
+none#3st Derivative (order: 2, window: 35 pt, incl only)#none
+none#3st Derivative (order: 2, window: 37 pt, incl only)#none
+none#3st Derivative (order: 2, window: 39 pt, incl only)#none
+none#3st Derivative (order: 2, window: 41 pt, incl only)#none
+none#3st Derivative (order: 2, window: 43 pt, incl only)#none
+none#3st Derivative (order: 2, window: 45 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 25 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 27 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 29 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 31 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 33 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 35 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 37 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 39 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 41 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 43 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 45 pt, incl only)#none
+SNV#1st Derivative (order: 2, window: 25 pt, incl only)#none
+SNV#1st Derivative (order: 2, window: 27 pt, incl only)#none
+SNV#1st Derivative (order: 2, window: 29 pt, incl only)#none
+SNV#1st Derivative (order: 2, window: 31 pt, incl only)#none
+SNV#1st Derivative (order: 2, window: 33 pt, incl only)#none
+SNV#1st Derivative (order: 2, window: 35 pt, incl only)#none
+SNV#1st Derivative (order: 2, window: 37 pt, incl only)#none
+SNV#1st Derivative (order: 2, window: 39 pt, incl only)#none
+SNV#1st Derivative (order: 2, window: 41 pt, incl only)#none
+SNV#1st Derivative (order: 2, window: 43 pt, incl only)#none
+SNV#1st Derivative (order: 2, window: 45 pt, incl only)#none
+MSC (mean)#1st Derivative (order: 2, window: 25 pt, incl only)#none
+MSC (mean)#1st Derivative (order: 2, window: 27 pt, incl only)#none
+MSC (mean)#1st Derivative (order: 2, window: 29 pt, incl only)#none
+MSC (mean)#1st Derivative (order: 2, window: 31 pt, incl only)#none
+MSC (mean)#1st Derivative (order: 2, window: 33 pt, incl only)#none
+MSC (mean)#1st Derivative (order: 2, window: 35 pt, incl only)#none
+MSC (mean)#1st Derivative (order: 2, window: 37 pt, incl only)#none
+MSC (mean)#1st Derivative (order: 2, window: 39 pt, incl only)#none
+MSC (mean)#1st Derivative (order: 2, window: 41 pt, incl only)#none
+MSC (mean)#1st Derivative (order: 2, window: 43 pt, incl only)#none
+MSC (mean)#1st Derivative (order: 2, window: 45 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 25 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 27 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 29 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 31 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 33 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 35 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 37 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 39 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 41 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 43 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 45 pt, incl only)#none
+SNV#2st Derivative (order: 2, window: 25 pt, incl only)#none
+SNV#2st Derivative (order: 2, window: 27 pt, incl only)#none
+SNV#2st Derivative (order: 2, window: 29 pt, incl only)#none
+SNV#2st Derivative (order: 2, window: 31 pt, incl only)#none
+SNV#2st Derivative (order: 2, window: 33 pt, incl only)#none
+SNV#2st Derivative (order: 2, window: 35 pt, incl only)#none
+SNV#2st Derivative (order: 2, window: 37 pt, incl only)#none
+SNV#2st Derivative (order: 2, window: 39 pt, incl only)#none
+SNV#2st Derivative (order: 2, window: 41 pt, incl only)#none
+SNV#2st Derivative (order: 2, window: 43 pt, incl only)#none
+SNV#2st Derivative (order: 2, window: 45 pt, incl only)#none
+MSC (mean)#2st Derivative (order: 2, window: 25 pt, incl only)#none
+MSC (mean)#2st Derivative (order: 2, window: 27 pt, incl only)#none
+MSC (mean)#2st Derivative (order: 2, window: 29 pt, incl only)#none
+MSC (mean)#2st Derivative (order: 2, window: 31 pt, incl only)#none
+MSC (mean)#2st Derivative (order: 2, window: 33 pt, incl only)#none
+MSC (mean)#2st Derivative (order: 2, window: 35 pt, incl only)#none
+MSC (mean)#2st Derivative (order: 2, window: 37 pt, incl only)#none
+MSC (mean)#2st Derivative (order: 2, window: 39 pt, incl only)#none
+MSC (mean)#2st Derivative (order: 2, window: 41 pt, incl only)#none
+MSC (mean)#2st Derivative (order: 2, window: 43 pt, incl only)#none
+MSC (mean)#2st Derivative (order: 2, window: 45 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 25 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 27 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 29 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 31 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 33 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 35 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 37 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 39 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 41 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 43 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 45 pt, incl only)#none
+SNV#3st Derivative (order: 2, window: 25 pt, incl only)#none
+SNV#3st Derivative (order: 2, window: 27 pt, incl only)#none
+SNV#3st Derivative (order: 2, window: 29 pt, incl only)#none
+SNV#3st Derivative (order: 2, window: 31 pt, incl only)#none
+SNV#3st Derivative (order: 2, window: 33 pt, incl only)#none
+SNV#3st Derivative (order: 2, window: 35 pt, incl only)#none
+SNV#3st Derivative (order: 2, window: 37 pt, incl only)#none
+SNV#3st Derivative (order: 2, window: 39 pt, incl only)#none
+SNV#3st Derivative (order: 2, window: 41 pt, incl only)#none
+SNV#3st Derivative (order: 2, window: 43 pt, incl only)#none
+SNV#3st Derivative (order: 2, window: 45 pt, incl only)#none
+MSC (mean)#3st Derivative (order: 2, window: 25 pt, incl only)#none
+MSC (mean)#3st Derivative (order: 2, window: 27 pt, incl only)#none
+MSC (mean)#3st Derivative (order: 2, window: 29 pt, incl only)#none
+MSC (mean)#3st Derivative (order: 2, window: 31 pt, incl only)#none
+MSC (mean)#3st Derivative (order: 2, window: 33 pt, incl only)#none
+MSC (mean)#3st Derivative (order: 2, window: 35 pt, incl only)#none
+MSC (mean)#3st Derivative (order: 2, window: 37 pt, incl only)#none
+MSC (mean)#3st Derivative (order: 2, window: 39 pt, incl only)#none
+MSC (mean)#3st Derivative (order: 2, window: 41 pt, incl only)#none
+MSC (mean)#3st Derivative (order: 2, window: 43 pt, incl only)#none
+MSC (mean)#3st Derivative (order: 2, window: 45 pt, incl only)#none
+MSC (mean)#smoothing (order: 2, window: 25 pt, incl only)#none
+MSC (mean)#smoothing (order: 2, window: 27 pt, incl only)#none
+MSC (mean)#smoothing (order: 2, window: 29 pt, incl only)#none
+MSC (mean)#smoothing (order: 2, window: 31 pt, incl only)#none
+MSC (mean)#smoothing (order: 2, window: 33 pt, incl only)#none
+MSC (mean)#smoothing (order: 2, window: 35 pt, incl only)#none
+MSC (mean)#smoothing (order: 2, window: 37 pt, incl only)#none
+MSC (mean)#smoothing (order: 2, window: 39 pt, incl only)#none
+MSC (mean)#smoothing (order: 2, window: 41 pt, incl only)#none
+MSC (mean)#smoothing (order: 2, window: 43 pt, incl only)#none
+MSC (mean)#smoothing (order: 2, window: 45 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 25 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 27 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 29 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 31 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 33 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 35 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 37 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 39 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 41 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 43 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 45 pt, incl only)#none
+SNV#smoothing (order: 2, window: 25 pt, incl only)#none
+SNV#smoothing (order: 2, window: 27 pt, incl only)#none
+SNV#smoothing (order: 2, window: 29 pt, incl only)#none
+SNV#smoothing (order: 2, window: 31 pt, incl only)#none
+SNV#smoothing (order: 2, window: 33 pt, incl only)#none
+SNV#smoothing (order: 2, window: 35 pt, incl only)#none
+SNV#smoothing (order: 2, window: 37 pt, incl only)#none
+SNV#smoothing (order: 2, window: 39 pt, incl only)#none
+SNV#smoothing (order: 2, window: 41 pt, incl only)#none
+SNV#smoothing (order: 2, window: 43 pt, incl only)#none
+SNV#smoothing (order: 2, window: 45 pt, incl only)#none
+none#smoothing (order: 2, window: 25 pt, incl only)#none
+none#smoothing (order: 2, window: 27 pt, incl only)#none
+none#smoothing (order: 2, window: 29 pt, incl only)#none
+none#smoothing (order: 2, window: 31 pt, incl only)#none
+none#smoothing (order: 2, window: 33 pt, incl only)#none
+none#smoothing (order: 2, window: 35 pt, incl only)#none
+none#smoothing (order: 2, window: 37 pt, incl only)#none
+none#smoothing (order: 2, window: 39 pt, incl only)#none
+none#smoothing (order: 2, window: 41 pt, incl only)#none
+none#smoothing (order: 2, window: 43 pt, incl only)#none
+none#smoothing (order: 2, window: 45 pt, incl only)#none
+Normalize (1-Norm, Area = 1)#none#Mean Center
+SNV#none#Mean Center
+MSC (mean)#none#Mean Center
+none#1st Derivative (order: 2, window: 25 pt, incl only)#Mean Center
+none#1st Derivative (order: 2, window: 27 pt, incl only)#Mean Center
+none#1st Derivative (order: 2, window: 29 pt, incl only)#Mean Center
+none#1st Derivative (order: 2, window: 31 pt, incl only)#Mean Center
+none#1st Derivative (order: 2, window: 33 pt, incl only)#Mean Center
+none#1st Derivative (order: 2, window: 35 pt, incl only)#Mean Center
+none#1st Derivative (order: 2, window: 37 pt, incl only)#Mean Center
+none#1st Derivative (order: 2, window: 39 pt, incl only)#Mean Center
+none#1st Derivative (order: 2, window: 41 pt, incl only)#Mean Center
+none#1st Derivative (order: 2, window: 43 pt, incl only)#Mean Center
+none#1st Derivative (order: 2, window: 45 pt, incl only)#Mean Center
+none#2st Derivative (order: 2, window: 25 pt, incl only)#Mean Center
+none#2st Derivative (order: 2, window: 27 pt, incl only)#Mean Center
+none#2st Derivative (order: 2, window: 29 pt, incl only)#Mean Center
+none#2st Derivative (order: 2, window: 31 pt, incl only)#Mean Center
+none#2st Derivative (order: 2, window: 33 pt, incl only)#Mean Center
+none#2st Derivative (order: 2, window: 35 pt, incl only)#Mean Center
+none#2st Derivative (order: 2, window: 37 pt, incl only)#Mean Center
+none#2st Derivative (order: 2, window: 39 pt, incl only)#Mean Center
+none#2st Derivative (order: 2, window: 41 pt, incl only)#Mean Center
+none#2st Derivative (order: 2, window: 43 pt, incl only)#Mean Center
+none#2st Derivative (order: 2, window: 45 pt, incl only)#Mean Center
+none#3st Derivative (order: 2, window: 25 pt, incl only)#Mean Center
+none#3st Derivative (order: 2, window: 27 pt, incl only)#Mean Center
+none#3st Derivative (order: 2, window: 29 pt, incl only)#Mean Center
+none#3st Derivative (order: 2, window: 31 pt, incl only)#Mean Center
+none#3st Derivative (order: 2, window: 33 pt, incl only)#Mean Center
+none#3st Derivative (order: 2, window: 35 pt, incl only)#Mean Center
+none#3st Derivative (order: 2, window: 37 pt, incl only)#Mean Center
+none#3st Derivative (order: 2, window: 39 pt, incl only)#Mean Center
+none#3st Derivative (order: 2, window: 41 pt, incl only)#Mean Center
+none#3st Derivative (order: 2, window: 43 pt, incl only)#Mean Center
+none#3st Derivative (order: 2, window: 45 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 25 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 27 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 29 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 31 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 33 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 35 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 37 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 39 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 41 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 43 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 45 pt, incl only)#Mean Center
+SNV#1st Derivative (order: 2, window: 25 pt, incl only)#Mean Center
+SNV#1st Derivative (order: 2, window: 27 pt, incl only)#Mean Center
+SNV#1st Derivative (order: 2, window: 29 pt, incl only)#Mean Center
+SNV#1st Derivative (order: 2, window: 31 pt, incl only)#Mean Center
+SNV#1st Derivative (order: 2, window: 33 pt, incl only)#Mean Center
+SNV#1st Derivative (order: 2, window: 35 pt, incl only)#Mean Center
+SNV#1st Derivative (order: 2, window: 37 pt, incl only)#Mean Center
+SNV#1st Derivative (order: 2, window: 39 pt, incl only)#Mean Center
+SNV#1st Derivative (order: 2, window: 41 pt, incl only)#Mean Center
+SNV#1st Derivative (order: 2, window: 43 pt, incl only)#Mean Center
+SNV#1st Derivative (order: 2, window: 45 pt, incl only)#Mean Center
+MSC (mean)#1st Derivative (order: 2, window: 25 pt, incl only)#Mean Center
+MSC (mean)#1st Derivative (order: 2, window: 27 pt, incl only)#Mean Center
+MSC (mean)#1st Derivative (order: 2, window: 29 pt, incl only)#Mean Center
+MSC (mean)#1st Derivative (order: 2, window: 31 pt, incl only)#Mean Center
+MSC (mean)#1st Derivative (order: 2, window: 33 pt, incl only)#Mean Center
+MSC (mean)#1st Derivative (order: 2, window: 35 pt, incl only)#Mean Center
+MSC (mean)#1st Derivative (order: 2, window: 37 pt, incl only)#Mean Center
+MSC (mean)#1st Derivative (order: 2, window: 39 pt, incl only)#Mean Center
+MSC (mean)#1st Derivative (order: 2, window: 41 pt, incl only)#Mean Center
+MSC (mean)#1st Derivative (order: 2, window: 43 pt, incl only)#Mean Center
+MSC (mean)#1st Derivative (order: 2, window: 45 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 25 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 27 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 29 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 31 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 33 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 35 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 37 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 39 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 41 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 43 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 45 pt, incl only)#Mean Center
+SNV#2st Derivative (order: 2, window: 25 pt, incl only)#Mean Center
+SNV#2st Derivative (order: 2, window: 27 pt, incl only)#Mean Center
+SNV#2st Derivative (order: 2, window: 29 pt, incl only)#Mean Center
+SNV#2st Derivative (order: 2, window: 31 pt, incl only)#Mean Center
+SNV#2st Derivative (order: 2, window: 33 pt, incl only)#Mean Center
+SNV#2st Derivative (order: 2, window: 35 pt, incl only)#Mean Center
+SNV#2st Derivative (order: 2, window: 37 pt, incl only)#Mean Center
+SNV#2st Derivative (order: 2, window: 39 pt, incl only)#Mean Center
+SNV#2st Derivative (order: 2, window: 41 pt, incl only)#Mean Center
+SNV#2st Derivative (order: 2, window: 43 pt, incl only)#Mean Center
+SNV#2st Derivative (order: 2, window: 45 pt, incl only)#Mean Center
+MSC (mean)#2st Derivative (order: 2, window: 25 pt, incl only)#Mean Center
+MSC (mean)#2st Derivative (order: 2, window: 27 pt, incl only)#Mean Center
+MSC (mean)#2st Derivative (order: 2, window: 29 pt, incl only)#Mean Center
+MSC (mean)#2st Derivative (order: 2, window: 31 pt, incl only)#Mean Center
+MSC (mean)#2st Derivative (order: 2, window: 33 pt, incl only)#Mean Center
+MSC (mean)#2st Derivative (order: 2, window: 35 pt, incl only)#Mean Center
+MSC (mean)#2st Derivative (order: 2, window: 37 pt, incl only)#Mean Center
+MSC (mean)#2st Derivative (order: 2, window: 39 pt, incl only)#Mean Center
+MSC (mean)#2st Derivative (order: 2, window: 41 pt, incl only)#Mean Center
+MSC (mean)#2st Derivative (order: 2, window: 43 pt, incl only)#Mean Center
+MSC (mean)#2st Derivative (order: 2, window: 45 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 25 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 27 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 29 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 31 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 33 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 35 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 37 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 39 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 41 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 43 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 45 pt, incl only)#Mean Center
+SNV#3st Derivative (order: 2, window: 25 pt, incl only)#Mean Center
+SNV#3st Derivative (order: 2, window: 27 pt, incl only)#Mean Center
+SNV#3st Derivative (order: 2, window: 29 pt, incl only)#Mean Center
+SNV#3st Derivative (order: 2, window: 31 pt, incl only)#Mean Center
+SNV#3st Derivative (order: 2, window: 33 pt, incl only)#Mean Center
+SNV#3st Derivative (order: 2, window: 35 pt, incl only)#Mean Center
+SNV#3st Derivative (order: 2, window: 37 pt, incl only)#Mean Center
+SNV#3st Derivative (order: 2, window: 39 pt, incl only)#Mean Center
+SNV#3st Derivative (order: 2, window: 41 pt, incl only)#Mean Center
+SNV#3st Derivative (order: 2, window: 43 pt, incl only)#Mean Center
+SNV#3st Derivative (order: 2, window: 45 pt, incl only)#Mean Center
+MSC (mean)#3st Derivative (order: 2, window: 25 pt, incl only)#Mean Center
+MSC (mean)#3st Derivative (order: 2, window: 27 pt, incl only)#Mean Center
+MSC (mean)#3st Derivative (order: 2, window: 29 pt, incl only)#Mean Center
+MSC (mean)#3st Derivative (order: 2, window: 31 pt, incl only)#Mean Center
+MSC (mean)#3st Derivative (order: 2, window: 33 pt, incl only)#Mean Center
+MSC (mean)#3st Derivative (order: 2, window: 35 pt, incl only)#Mean Center
+MSC (mean)#3st Derivative (order: 2, window: 37 pt, incl only)#Mean Center
+MSC (mean)#3st Derivative (order: 2, window: 39 pt, incl only)#Mean Center
+MSC (mean)#3st Derivative (order: 2, window: 41 pt, incl only)#Mean Center
+MSC (mean)#3st Derivative (order: 2, window: 43 pt, incl only)#Mean Center
+MSC (mean)#3st Derivative (order: 2, window: 45 pt, incl only)#Mean Center
+MSC (mean)#smoothing (order: 2, window: 25 pt, incl only)#Mean Center
+MSC (mean)#smoothing (order: 2, window: 27 pt, incl only)#Mean Center
+MSC (mean)#smoothing (order: 2, window: 29 pt, incl only)#Mean Center
+MSC (mean)#smoothing (order: 2, window: 31 pt, incl only)#Mean Center
+MSC (mean)#smoothing (order: 2, window: 33 pt, incl only)#Mean Center
+MSC (mean)#smoothing (order: 2, window: 35 pt, incl only)#Mean Center
+MSC (mean)#smoothing (order: 2, window: 37 pt, incl only)#Mean Center
+MSC (mean)#smoothing (order: 2, window: 39 pt, incl only)#Mean Center
+MSC (mean)#smoothing (order: 2, window: 41 pt, incl only)#Mean Center
+MSC (mean)#smoothing (order: 2, window: 43 pt, incl only)#Mean Center
+MSC (mean)#smoothing (order: 2, window: 45 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 25 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 27 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 29 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 31 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 33 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 35 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 37 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 39 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 41 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 43 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 45 pt, incl only)#Mean Center
+SNV#smoothing (order: 2, window: 25 pt, incl only)#Mean Center
+SNV#smoothing (order: 2, window: 27 pt, incl only)#Mean Center
+SNV#smoothing (order: 2, window: 29 pt, incl only)#Mean Center
+SNV#smoothing (order: 2, window: 31 pt, incl only)#Mean Center
+SNV#smoothing (order: 2, window: 33 pt, incl only)#Mean Center
+SNV#smoothing (order: 2, window: 35 pt, incl only)#Mean Center
+SNV#smoothing (order: 2, window: 37 pt, incl only)#Mean Center
+SNV#smoothing (order: 2, window: 39 pt, incl only)#Mean Center
+SNV#smoothing (order: 2, window: 41 pt, incl only)#Mean Center
+SNV#smoothing (order: 2, window: 43 pt, incl only)#Mean Center
+SNV#smoothing (order: 2, window: 45 pt, incl only)#Mean Center
+none#smoothing (order: 2, window: 25 pt, incl only)#Mean Center
+none#smoothing (order: 2, window: 27 pt, incl only)#Mean Center
+none#smoothing (order: 2, window: 29 pt, incl only)#Mean Center
+none#smoothing (order: 2, window: 31 pt, incl only)#Mean Center
+none#smoothing (order: 2, window: 33 pt, incl only)#Mean Center
+none#smoothing (order: 2, window: 35 pt, incl only)#Mean Center
+none#smoothing (order: 2, window: 37 pt, incl only)#Mean Center
+none#smoothing (order: 2, window: 39 pt, incl only)#Mean Center
+none#smoothing (order: 2, window: 41 pt, incl only)#Mean Center
+none#smoothing (order: 2, window: 43 pt, incl only)#Mean Center
+none#smoothing (order: 2, window: 45 pt, incl only)#Mean Center
+Normalize (1-Norm, Area = 1)#none#Autoscale
+SNV#none#Autoscale
+MSC (mean)#none#Autoscale
+none#1st Derivative (order: 2, window: 25 pt, incl only)#Autoscale
+none#1st Derivative (order: 2, window: 27 pt, incl only)#Autoscale
+none#1st Derivative (order: 2, window: 29 pt, incl only)#Autoscale
+none#1st Derivative (order: 2, window: 31 pt, incl only)#Autoscale
+none#1st Derivative (order: 2, window: 33 pt, incl only)#Autoscale
+none#1st Derivative (order: 2, window: 35 pt, incl only)#Autoscale
+none#1st Derivative (order: 2, window: 37 pt, incl only)#Autoscale
+none#1st Derivative (order: 2, window: 39 pt, incl only)#Autoscale
+none#1st Derivative (order: 2, window: 41 pt, incl only)#Autoscale
+none#1st Derivative (order: 2, window: 43 pt, incl only)#Autoscale
+none#1st Derivative (order: 2, window: 45 pt, incl only)#Autoscale
+none#2st Derivative (order: 2, window: 25 pt, incl only)#Autoscale
+none#2st Derivative (order: 2, window: 27 pt, incl only)#Autoscale
+none#2st Derivative (order: 2, window: 29 pt, incl only)#Autoscale
+none#2st Derivative (order: 2, window: 31 pt, incl only)#Autoscale
+none#2st Derivative (order: 2, window: 33 pt, incl only)#Autoscale
+none#2st Derivative (order: 2, window: 35 pt, incl only)#Autoscale
+none#2st Derivative (order: 2, window: 37 pt, incl only)#Autoscale
+none#2st Derivative (order: 2, window: 39 pt, incl only)#Autoscale
+none#2st Derivative (order: 2, window: 41 pt, incl only)#Autoscale
+none#2st Derivative (order: 2, window: 43 pt, incl only)#Autoscale
+none#2st Derivative (order: 2, window: 45 pt, incl only)#Autoscale
+none#3st Derivative (order: 2, window: 25 pt, incl only)#Autoscale
+none#3st Derivative (order: 2, window: 27 pt, incl only)#Autoscale
+none#3st Derivative (order: 2, window: 29 pt, incl only)#Autoscale
+none#3st Derivative (order: 2, window: 31 pt, incl only)#Autoscale
+none#3st Derivative (order: 2, window: 33 pt, incl only)#Autoscale
+none#3st Derivative (order: 2, window: 35 pt, incl only)#Autoscale
+none#3st Derivative (order: 2, window: 37 pt, incl only)#Autoscale
+none#3st Derivative (order: 2, window: 39 pt, incl only)#Autoscale
+none#3st Derivative (order: 2, window: 41 pt, incl only)#Autoscale
+none#3st Derivative (order: 2, window: 43 pt, incl only)#Autoscale
+none#3st Derivative (order: 2, window: 45 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 25 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 27 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 29 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 31 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 33 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 35 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 37 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 39 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 41 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 43 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#1st Derivative (order: 2, window: 45 pt, incl only)#Autoscale
+SNV#1st Derivative (order: 2, window: 25 pt, incl only)#Autoscale
+SNV#1st Derivative (order: 2, window: 27 pt, incl only)#Autoscale
+SNV#1st Derivative (order: 2, window: 29 pt, incl only)#Autoscale
+SNV#1st Derivative (order: 2, window: 31 pt, incl only)#Autoscale
+SNV#1st Derivative (order: 2, window: 33 pt, incl only)#Autoscale
+SNV#1st Derivative (order: 2, window: 35 pt, incl only)#Autoscale
+SNV#1st Derivative (order: 2, window: 37 pt, incl only)#Autoscale
+SNV#1st Derivative (order: 2, window: 39 pt, incl only)#Autoscale
+SNV#1st Derivative (order: 2, window: 41 pt, incl only)#Autoscale
+SNV#1st Derivative (order: 2, window: 43 pt, incl only)#Autoscale
+SNV#1st Derivative (order: 2, window: 45 pt, incl only)#Autoscale
+MSC (mean)#1st Derivative (order: 2, window: 25 pt, incl only)#Autoscale
+MSC (mean)#1st Derivative (order: 2, window: 27 pt, incl only)#Autoscale
+MSC (mean)#1st Derivative (order: 2, window: 29 pt, incl only)#Autoscale
+MSC (mean)#1st Derivative (order: 2, window: 31 pt, incl only)#Autoscale
+MSC (mean)#1st Derivative (order: 2, window: 33 pt, incl only)#Autoscale
+MSC (mean)#1st Derivative (order: 2, window: 35 pt, incl only)#Autoscale
+MSC (mean)#1st Derivative (order: 2, window: 37 pt, incl only)#Autoscale
+MSC (mean)#1st Derivative (order: 2, window: 39 pt, incl only)#Autoscale
+MSC (mean)#1st Derivative (order: 2, window: 41 pt, incl only)#Autoscale
+MSC (mean)#1st Derivative (order: 2, window: 43 pt, incl only)#Autoscale
+MSC (mean)#1st Derivative (order: 2, window: 45 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 25 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 27 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 29 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 31 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 33 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 35 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 37 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 39 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 41 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 43 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#2st Derivative (order: 2, window: 45 pt, incl only)#Autoscale
+SNV#2st Derivative (order: 2, window: 25 pt, incl only)#Autoscale
+SNV#2st Derivative (order: 2, window: 27 pt, incl only)#Autoscale
+SNV#2st Derivative (order: 2, window: 29 pt, incl only)#Autoscale
+SNV#2st Derivative (order: 2, window: 31 pt, incl only)#Autoscale
+SNV#2st Derivative (order: 2, window: 33 pt, incl only)#Autoscale
+SNV#2st Derivative (order: 2, window: 35 pt, incl only)#Autoscale
+SNV#2st Derivative (order: 2, window: 37 pt, incl only)#Autoscale
+SNV#2st Derivative (order: 2, window: 39 pt, incl only)#Autoscale
+SNV#2st Derivative (order: 2, window: 41 pt, incl only)#Autoscale
+SNV#2st Derivative (order: 2, window: 43 pt, incl only)#Autoscale
+SNV#2st Derivative (order: 2, window: 45 pt, incl only)#Autoscale
+MSC (mean)#2st Derivative (order: 2, window: 25 pt, incl only)#Autoscale
+MSC (mean)#2st Derivative (order: 2, window: 27 pt, incl only)#Autoscale
+MSC (mean)#2st Derivative (order: 2, window: 29 pt, incl only)#Autoscale
+MSC (mean)#2st Derivative (order: 2, window: 31 pt, incl only)#Autoscale
+MSC (mean)#2st Derivative (order: 2, window: 33 pt, incl only)#Autoscale
+MSC (mean)#2st Derivative (order: 2, window: 35 pt, incl only)#Autoscale
+MSC (mean)#2st Derivative (order: 2, window: 37 pt, incl only)#Autoscale
+MSC (mean)#2st Derivative (order: 2, window: 39 pt, incl only)#Autoscale
+MSC (mean)#2st Derivative (order: 2, window: 41 pt, incl only)#Autoscale
+MSC (mean)#2st Derivative (order: 2, window: 43 pt, incl only)#Autoscale
+MSC (mean)#2st Derivative (order: 2, window: 45 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 25 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 27 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 29 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 31 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 33 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 35 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 37 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 39 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 41 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 43 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#3st Derivative (order: 2, window: 45 pt, incl only)#Autoscale
+SNV#3st Derivative (order: 2, window: 25 pt, incl only)#Autoscale
+SNV#3st Derivative (order: 2, window: 27 pt, incl only)#Autoscale
+SNV#3st Derivative (order: 2, window: 29 pt, incl only)#Autoscale
+SNV#3st Derivative (order: 2, window: 31 pt, incl only)#Autoscale
+SNV#3st Derivative (order: 2, window: 33 pt, incl only)#Autoscale
+SNV#3st Derivative (order: 2, window: 35 pt, incl only)#Autoscale
+SNV#3st Derivative (order: 2, window: 37 pt, incl only)#Autoscale
+SNV#3st Derivative (order: 2, window: 39 pt, incl only)#Autoscale
+SNV#3st Derivative (order: 2, window: 41 pt, incl only)#Autoscale
+SNV#3st Derivative (order: 2, window: 43 pt, incl only)#Autoscale
+SNV#3st Derivative (order: 2, window: 45 pt, incl only)#Autoscale
+MSC (mean)#3st Derivative (order: 2, window: 25 pt, incl only)#Autoscale
+MSC (mean)#3st Derivative (order: 2, window: 27 pt, incl only)#Autoscale
+MSC (mean)#3st Derivative (order: 2, window: 29 pt, incl only)#Autoscale
+MSC (mean)#3st Derivative (order: 2, window: 31 pt, incl only)#Autoscale
+MSC (mean)#3st Derivative (order: 2, window: 33 pt, incl only)#Autoscale
+MSC (mean)#3st Derivative (order: 2, window: 35 pt, incl only)#Autoscale
+MSC (mean)#3st Derivative (order: 2, window: 37 pt, incl only)#Autoscale
+MSC (mean)#3st Derivative (order: 2, window: 39 pt, incl only)#Autoscale
+MSC (mean)#3st Derivative (order: 2, window: 41 pt, incl only)#Autoscale
+MSC (mean)#3st Derivative (order: 2, window: 43 pt, incl only)#Autoscale
+MSC (mean)#3st Derivative (order: 2, window: 45 pt, incl only)#Autoscale
+MSC (mean)#smoothing (order: 2, window: 25 pt, incl only)#Autoscale
+MSC (mean)#smoothing (order: 2, window: 27 pt, incl only)#Autoscale
+MSC (mean)#smoothing (order: 2, window: 29 pt, incl only)#Autoscale
+MSC (mean)#smoothing (order: 2, window: 31 pt, incl only)#Autoscale
+MSC (mean)#smoothing (order: 2, window: 33 pt, incl only)#Autoscale
+MSC (mean)#smoothing (order: 2, window: 35 pt, incl only)#Autoscale
+MSC (mean)#smoothing (order: 2, window: 37 pt, incl only)#Autoscale
+MSC (mean)#smoothing (order: 2, window: 39 pt, incl only)#Autoscale
+MSC (mean)#smoothing (order: 2, window: 41 pt, incl only)#Autoscale
+MSC (mean)#smoothing (order: 2, window: 43 pt, incl only)#Autoscale
+MSC (mean)#smoothing (order: 2, window: 45 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 25 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 27 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 29 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 31 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 33 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 35 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 37 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 39 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 41 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 43 pt, incl only)#Autoscale
+Normalize (1-Norm, Area = 1)#smoothing (order: 2, window: 45 pt, incl only)#Autoscale
+SNV#smoothing (order: 2, window: 25 pt, incl only)#Autoscale
+SNV#smoothing (order: 2, window: 27 pt, incl only)#Autoscale
+SNV#smoothing (order: 2, window: 29 pt, incl only)#Autoscale
+SNV#smoothing (order: 2, window: 31 pt, incl only)#Autoscale
+SNV#smoothing (order: 2, window: 33 pt, incl only)#Autoscale
+SNV#smoothing (order: 2, window: 35 pt, incl only)#Autoscale
+SNV#smoothing (order: 2, window: 37 pt, incl only)#Autoscale
+SNV#smoothing (order: 2, window: 39 pt, incl only)#Autoscale
+SNV#smoothing (order: 2, window: 41 pt, incl only)#Autoscale
+SNV#smoothing (order: 2, window: 43 pt, incl only)#Autoscale
+SNV#smoothing (order: 2, window: 45 pt, incl only)#Autoscale
+none#smoothing (order: 2, window: 25 pt, incl only)#Autoscale
+none#smoothing (order: 2, window: 27 pt, incl only)#Autoscale
+none#smoothing (order: 2, window: 29 pt, incl only)#Autoscale
+none#smoothing (order: 2, window: 31 pt, incl only)#Autoscale
+none#smoothing (order: 2, window: 33 pt, incl only)#Autoscale
+none#smoothing (order: 2, window: 35 pt, incl only)#Autoscale
+none#smoothing (order: 2, window: 37 pt, incl only)#Autoscale
+none#smoothing (order: 2, window: 39 pt, incl only)#Autoscale
+none#smoothing (order: 2, window: 41 pt, incl only)#Autoscale
+none#smoothing (order: 2, window: 43 pt, incl only)#Autoscale
+none#smoothing (order: 2, window: 45 pt, incl only)#Autoscale
