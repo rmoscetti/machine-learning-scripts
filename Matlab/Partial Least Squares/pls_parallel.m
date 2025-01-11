@@ -1,8 +1,8 @@
 function pls_parallel(file_input, file_output)
 % PLS_PARALLEL: A MATLAB function to perform parallel PLS calibration and prediction.
 % Author: Roberto Moscetti
-% Version: 0.1
-% Date: 2025-01-06
+% Version: 0.2
+% Date: 2025-01-11
 %
 % This script is designed for use with the PLS_Toolbox.
 % It processes data from the provided input file, applies spectral pretreatments, and
@@ -12,128 +12,129 @@ function pls_parallel(file_input, file_output)
 %   file_input  - MAT file containing calibration and prediction datasets.
 %   file_output - MAT file where the computed results will be saved.
 
-    load pretreatment_list.mat % Load the list of pretreatment methods.
-    load(file_input) % Load calibration and prediction datasets.
+    clc; % Clear command window
+    load pretreatment_list.mat % Load the pretreatment list file
+    load(file_input) % Load the input data file
 
-    % Convert calibration and prediction data into compatible dataset format.
-    X_cal = dataset(X_cal);
-    X_pred = dataset(X_pred);
-    % Uncomment the following lines if additional prediction datasets are used (at the moment is not working).
-    % Xtest_2 = dataset(Xtest_2);
-    % Xtest_3 = dataset(Xtest_3);
-    Y_cal = dataset(Y_cal);
-    Y_pred = dataset(Y_pred);
-    % Uncomment the following lines if additional prediction datasets are used (at the moment is not working).
-    % Ytest_2 = dataset(Ytest_2);
-    % Ytest_3 = dataset(Ytest_3);
+% Data preparation and conversion to dataset format
+    % Uncomment if needed to split dataset
+    % [X_cal, X_test, Y_cal, Y_test] = cal_test_split(X, Y, 0.25, 1);
+    
+    X_cal = dataset(X_cal); % Calibration data
+    X_pred = dataset(X_pred); % Prediciton data
+    
+    % Additional test datasets (Commented out)
+    % Xpred_2 = dataset(Xpred_2);
+    % Xpred_3 = dataset(Xpred_3);
 
-    n = length(mynew_methods); % Number of pretreatment methods to be tested.
-    LVs = 20; % Maximum number of latent variables to be computed.
-    k = 1; % Number of prediction datasets.
+    Y_cal = dataset(Y_cal); % Calibration Y
+    Y_pred = dataset(Y_pred); % Prediction Y
+    
+    % Additional test label datasets (Commented out)
+    % Ypred_2 = dataset(Ypred_2);
+    % Ypred_3 = dataset(Ypred_3);
 
-    % Initialize the results structure to store RMSE, BIAS, and R^2 values.
-    results.RMSE.CAL = zeros(n, LVs);
-    results.RMSE.CROSSV = zeros(n, LVs);
-    results.RMSE.PRED = zeros(n, k);
-    results.BIAS.CAL = zeros(n, LVs);
-    results.BIAS.CROSSV = zeros(n, LVs);
-    results.BIAS.PRED = zeros(n, k);
-    results.R2.CAL = zeros(n, LVs);
-    results.R2.CROSSV = zeros(n, LVs);
-    results.R2.PRED = zeros(n, k);
+    % Initialize parameters
+    n = length(mynew_methods); % Number of pretreatments to test
+    LVs = 20; % Maximum number of latent variables (LVs)
+    k = 1; % Number of prediction sets
 
-    % If multiple prediction sets are used, prepare for average computations.
+    % Initialize result storage variables
+    results.RMSE.CAL = zeros(n, LVs); % Root Mean Square Error (Calibration)
+    results.RMSE.CROSSV = zeros(n, LVs); % RMSE (Cross-validation)
+    results.RMSE.PRED = zeros(n, k); % RMSE (Prediction)
+    results.BIAS.CAL = zeros(n, LVs); % Bias (Calibration)
+    results.BIAS.CROSSV = zeros(n, LVs); % Bias (Cross-validation)
+    results.BIAS.PRED = zeros(n, k); % Bias (Prediction)
+    results.R2.CAL = zeros(n, LVs); % R-squared (Calibration)
+    results.R2.CROSSV = zeros(n, LVs); % R-squared (Cross-validation)
+    results.R2.PRED = zeros(n, k); % R-squared (Prediction)
+
+    % Mean results storage (if multiple prediction sets)
     if k > 1
-        results.MEAN.RMSEP = zeros(n, 1);
-        results.MEAN.BIASP = zeros(n, 1);
-        results.MEAN.R2P = zeros(n, 1);
+        results.MEAN.RMSEP = zeros(n, 1); % Mean RMSE (Prediction)
+        results.MEAN.BIASP = zeros(n, 1); % Mean Bias (Prediction)
+        results.MEAN.R2P = zeros(n, 1); % Mean R-squared (Prediction)
     end
 
-    % List of pretreatment indices to process.
-    results.pret_list = [181:215, 227:248, 260:281, 293:325, 337:358, 360:394, ...
-                         406:427, 439:460, 472:504, 516:537];
+    % List of pretreatments to test
+    results.pret_list = [181:215, 227:248, 260:281, 293:325, ...
+                         337:358, 360:394, 406:427, 439:460, ...
+                         472:504, 516:537];
 
-    % Creazione della DataQueue per il counter
-    dq = parallel.pool.DataQueue;
-    afterEach(dq, @(count) fprintf('Avanzamento: %d/%d\n', count, length(results.pret_list)));
+    c = 0; % Counter for progress tracking
+    for i = results.pret_list
+        c = c + 1;
 
-    % Variabile condivisa per tracciare l'avanzamento
-    progress = 0;
-	
-	% Use a parallel pool for computations.
-    parfor i_idx = 1:length(results.pret_list)
-        i = results.pret_list(i_idx); % Current pretreatment index.
-		
-		% Incremento del counter
-        send(dq, i_idx); % Notifica il progresso tramite DataQueue
+        % Spectral pretreatment settings (calibration)
+        xprepro = mynew_methods{1, i}; % X pretreatment method
+        yprepro = mynew_methods{2, i}; % Y pretreatment method
+        options = pls('options'); % PLS options
+        options.plots = 'none'; % Disable plots
+        options.display = 'off'; % Disable display
 
-        % Retrieve spectral pretreatment methods for X and Y data.
-        xprepro = mynew_methods{1, i};
-        yprepro = mynew_methods{2, i};
+        % Spectral pretreatment settings (cross-validation)
+        optionscv = crossval('options'); % Cross-validation options
+        optionscv.plots = 'none'; % Disable plots
+        optionscv.lwr.waitbar = 'none'; % Disable waitbar
+        optionscv.display = 'off'; % Disable display
+        optionscv.preprocessing = {xprepro, yprepro}; % Apply pretreatments
 
-        % Configure PLS options.
-        options = pls('options');
-        options.plots = 'none';
-        options.display = 'off';
+        % Perform pretreatment preprocessing
+        [Xcalp, spx] = preprocess('calibrate', xprepro, X_cal); % Preprocessing of X
+        [Ycalp, spy] = preprocess('calibrate', yprepro, Y_cal); % Preprocessing of Y
+        Xtestp_1 = preprocess('apply', spx, X_pred); % Apply X pretreatment to prediction data
+        Ytestp_1 = preprocess('apply', spy, Y_pred); % Apply Y pretreatment to prediction data
 
-        % Configure cross-validation options.
-        optionscv = crossval('options');
-        optionscv.plots = 'none';
-        optionscv.lwr.waitbar = 'none';
-        optionscv.display = 'off';
+        biasc = zeros(LVs, 1); % Initialize bias storage
+        model = pls(Xcalp, Ycalp, LVs, options); % Train PLS model
+        biasc(LVs) = model.bias(LVs); % Store bias for max LVs
 
-        % Apply calibration pretreatments to X and Y datasets.
-        [Xcalp, spx] = preprocess('calibrate', xprepro, X_cal);
-        [Ycalp, spy] = preprocess('calibrate', yprepro, Y_cal);
+        modelcv = crossval(X_cal, Y_cal, model, {'vet', 10}, LVs, optionscv); % Cross-validate model
 
-        % Apply pretreatments to prediction datasets.
-        Xtestp_1 = preprocess('apply', spx, X_pred);
-        Ytestp_1 = preprocess('apply', spy, Y_pred);
-        % Uncomment the following lines if additional prediction datasets are used (at the moment is not working)
-        % Xtestp_2 = preprocess('apply', spx, Xtest_2);
-        % Ytestp_2 = preprocess('apply', spy, Ytest_2);
-
-        % Compute bias for each latent variable.
-        biasc = zeros(LVs, 1);
-        for lvs = 1:LVs
-            model = pls(Xcalp, Ycalp, lvs, options);
-            biasc(lvs) = model.bias(lvs);
+        % Parallel loop to compute bias for intermediate LVs
+        parfor lvs = 1:(LVs-1)
+            model = pls(Xcalp, Ycalp, lvs, options); % Train model
+            biasc(lvs) = model.bias(lvs); % Store bias
         end
 
-        % Perform cross-validation using the current model.
-        modelcv = crossval(X_cal, Y_cal, model, {'vet', 10}, LVs, optionscv);
+        % Save calibration and cross-validation results
+        results.RMSE.CAL(i, 1:LVs) = modelcv.rmsec; % Calibration RMSE
+        results.RMSE.CROSSV(i, 1:LVs) = modelcv.rmsecv; % Cross-validation RMSE
+        results.BIAS.CAL(i, 1:LVs) = biasc; % Calibration bias
+        results.BIAS.CROSSV(i, 1:LVs) = modelcv.cvbias; % Cross-validation bias
+        results.R2.CAL(i, 1:LVs) = modelcv.r2c; % Calibration R-squared
+        results.R2.CROSSV(i, 1:LVs) = modelcv.r2cv; % Cross-validation R-squared
 
-        % Store calibration and cross-validation results.
-        results.RMSE.CAL(i, 1:LVs) = modelcv.rmsec;
-        results.RMSE.CROSSV(i, 1:LVs) = modelcv.rmsecv;
-        results.BIAS.CAL(i, 1:LVs) = biasc;
-        results.BIAS.CROSSV(i, 1:LVs) = modelcv.cvbias;
-        results.R2.CAL(i, 1:LVs) = modelcv.r2c;
-        results.R2.CROSSV(i, 1:LVs) = modelcv.r2cv;
+        % Determine optimal number of LVs
+        suggested_LVs = choosecomp(modelcv); % Suggested LVs
+        results.LVs(i, 1) = suggested_LVs; % Save suggested LVs
 
-        % Determine the optimal number of latent variables.
-        suggested_LVs = choosecomp(modelcv);
-        results.LVs(i, 1) = suggested_LVs;
-
-        % Calibrate the final model using the optimal number of latent variables.
+        % Final model calibration using suggested LVs
         final_model = pls(Xcalp, Ycalp, suggested_LVs, options);
 
-        % Perform predictions on the test datasets.
+        % Perform predictions and store results
         for j = 1:k
             eval(['pred = pls(Xtestp_' num2str(j) ', Ytestp_' num2str(j) ', final_model, options);']);
-            results.RMSE.PRED(i, j) = pred.detail.rmsep(end);
-            results.BIAS.PRED(i, j) = pred.detail.predbias(end);
-            results.R2.PRED(i, j) = pred.detail.r2p(end);
+            results.RMSE.PRED(i, j) = pred.detail.rmsep(end); % RMSE (Prediction)
+            results.BIAS.PRED(i, j) = pred.detail.predbias(end); % Bias (Prediction)
+            results.R2.PRED(i, j) = pred.detail.r2p(end); % R-squared (Prediction)
         end
+        
+        clc; % Clear command window for progress updates
+        disp(['Model ', num2str(c), ' of ', num2str(size(results.pret_list, 2))]); % Display progress
+        disp(['Pretreatment: ', num2str(i)]); % Display current pretreatment
+        for u = 1:size(xprepro, 2)
+            disp(['- ', xprepro(1, u).description]); % Display pretreatment description
+        end
+        
     end
 
-    % Compute mean prediction results if multiple test sets are used.
+    % Compute average results (if multiple prediction sets)
     if k > 1
-        results.MEAN.RMSEP = mean(results.RMSE.PRED, 2);
-        results.MEAN.BIASP = mean(results.BIAS.PRED, 2);
-        results.MEAN.R2P = mean(results.R2.PRED, 2);
+        results.MEAN.RMSEP = mean(results.RMSE.PRED, 2); % Mean RMSE
+        results.MEAN.BIASP = mean(results.BIAS.PRED, 2); % Mean Bias
+        results.MEAN.R2P = mean(results.R2.PRED, 2); % Mean R-squared
     end
 
-    % Save the results to the specified output file.
-    save(file_output, 'results');
-end
+    save(file_output, 'results'); % Save results to output file
