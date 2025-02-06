@@ -167,7 +167,7 @@ CPI_dataframe <- function(ID, RMSEC, RMSECV = NA, RMSEP = NA, BIASC, BIASCV = NA
 }
 
 # CPI
-# This is a wrapper function that calls CPI_dataframe and returns only the Composite Performance Index (CPI).
+# This is a wrapper function that calls CPI_dataframe and returns only the Cumulative Performance Index (CPI).
 CPI <- function(ID, RMSEC, RMSECV = NA, RMSEP = NA, BIASC, BIASCV = NA, BIASP = NA, R2C, R2CV = NA, R2P = NA, BIAS_thres = NA, PCA_var = 0.95, scale = TRUE){
   # Compute the full data frame with CPI and other metrics.
   temp <- CPI_dataframe(ID, RMSEC, RMSECV, RMSEP, BIASC, BIASCV, BIASP, R2C, R2CV, R2P, BIAS_thres, PCA_var, scale)
