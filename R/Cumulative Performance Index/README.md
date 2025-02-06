@@ -1,4 +1,4 @@
-# Cumulative Performance Index (CPI) Calculation in R
+# Cumulative Performance Index (CPI) calculation in R
 
 This project provides a set of R functions designed to compute a **Cumulative Performance Index (CPI)** from multiple model performance metrics. The CPI is derived from error measurements (e.g., calibration error, cross-validation error, prediction error), bias values, and R² statistics. By leveraging **Principal Component Analysis (PCA)**, the code weights and combines these metrics into a single, informative index for model evaluation.
 
