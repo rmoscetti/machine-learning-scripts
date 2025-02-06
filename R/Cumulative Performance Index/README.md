@@ -85,8 +85,6 @@ The repository includes the following functions:
     print(cpi_values)
     ```
 
-Everything else in your README.md file looks great.
-
 ## Contributing
 Contributions to enhance functionality, improve documentation, or optimize performance are welcome. Please fork the repository and submit a pull request with your proposed changes.
 
