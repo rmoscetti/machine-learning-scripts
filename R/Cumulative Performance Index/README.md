@@ -47,7 +47,7 @@ The repository includes the following functions:
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/rmoscetti/machine-learning-scripts/tree/main/R/Cumulative%20Performance%20Index
 ```
 
 2. **Open the project in your preferred R environment (e.g., RStudio).**
@@ -85,11 +85,11 @@ cpi_values <- CPI(ID, RMSEC, RMSECV, RMSEP, BIASC, BIASCV, BIASP, R2C, R2CV, R2P
 print(cpi_values)
 ```
 
-**Contributing**
+## Contributing
 Contributions to enhance functionality, improve documentation, or optimize performance are welcome. Please fork the repository and submit a pull request with your proposed changes.
 
-**License**
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-**Contact**
+## Contact
 For any questions or suggestions, please contact rmoscetti@unitus.it
