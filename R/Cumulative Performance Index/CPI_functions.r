@@ -1,3 +1,15 @@
+# =======================================================================
+# Author: Roberto Moscetti
+# Version: v1.0.0
+# Date: 2025-02-06
+# Description:
+#   This script calculates the Composite Performance Index (CPI) using various
+#   model performance metrics including calibration error, cross-validation error,
+#   prediction error, bias metrics, and R² statistics. It employs Principal Component
+#   Analysis (PCA) to assign weights to the metrics, thereby providing a single,
+#   comprehensive index for model evaluation.
+# =======================================================================
+
 # metrics ratio
 # This function computes the relative ratio difference between a calibration value and a prediction.
 # It calculates the absolute value of (cv_pred/cal - 1).
