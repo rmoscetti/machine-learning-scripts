@@ -59,7 +59,9 @@ The repository includes the following functions:
     ```
 
 4. **Usage**
-    After sourcing the script, you can compute the CPI for your data by calling the `CPI` function. Below is an example:
+    After sourcing the script, you can compute the CPI for your data by calling the `CPI` function.
+
+   Below is an example:
     ```r
     # Example data (replace with your own values)
     ID <- 1:10
