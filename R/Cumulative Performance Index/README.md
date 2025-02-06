@@ -78,7 +78,7 @@ BIAS_thres <- 0.1
 PCA_var <- 0.95
 scale_data <- TRUE
 
-# Compute the Composite Performance Index (CPI)
+# Compute the Cumulative Performance Index (CPI)
 cpi_values <- CPI(ID, RMSEC, RMSECV, RMSEP, BIASC, BIASCV, BIASP, R2C, R2CV, R2P, BIAS_thres, PCA_var, scale_data)
 
 # View the CPI values
