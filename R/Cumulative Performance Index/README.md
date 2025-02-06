@@ -53,12 +53,13 @@ The repository includes the following functions:
 2. **Open the project in your preferred R environment (e.g., RStudio).**
 
 3. **Source the script:**
-    In your R console or script, run:
+
+   In your R console or script, run:
     ```r
     source("R/Cumulative Performance Index/CPI_functions.r")
     ```
 
-4. **Usage**
+5. **Usage**
     After sourcing the script, you can compute the CPI for your data by calling the `CPI` function.
 
    Below is an example:
