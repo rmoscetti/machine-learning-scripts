@@ -92,4 +92,4 @@ Contributions to enhance functionality, improve documentation, or optimize perfo
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Contact
-For any questions or suggestions, please contact rmoscetti@unitus.it
+For any questions or suggestions, please contact me: rmoscetti@unitus.it
