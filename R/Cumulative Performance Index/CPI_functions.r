@@ -1,42 +1,42 @@
 # =======================================================================
 # Author: Roberto Moscetti
-# Version: v1.0.0
-# Date: 2025-02-06
+# Version: v1.1.0
+# Date: 2026-10-21
 # Description:
-#   This script calculates the Composite Performance Index (CPI) using various
+#   This script calculates the Cumulative Performance Index (CPI) using various
 #   model performance metrics including calibration error, cross-validation error,
 #   prediction error, bias metrics, and R² statistics. It employs Principal Component
-#   Analysis (PCA) to assign weights to the metrics, thereby providing a single,
-#   comprehensive index for model evaluation.
+#   Analysis (PCA) to assign data-dependent weights and combine the metrics into
+#   a relative score for the pool of models supplied. See METHODS.md for details.
 # =======================================================================
 
 # metrics ratio
-# This function computes the relative ratio difference between a calibration value and a prediction.
+# This function compares a calibration value with a cross-validation or prediction value.
 # It calculates the absolute value of (cv_pred/cal - 1).
 metric_ratio <- function(cal, cv_pred){
   ratio <- abs(cv_pred/cal - 1)  # Compute relative difference ratio.
 }
 
 # metrics difference
-# This function computes the absolute difference between a calibration value and a prediction.
+# This function computes abs(cv_pred - cal) for the values supplied at the time of the call.
 metric_diff <- function(cal, cv_pred){
   diff <- abs(cv_pred - cal)  # Compute absolute difference.
 }
 
 # CPI_dataframe
-# This function calculates a Composite Performance Index (CPI) based on several input metrics.
+# This function calculates a Cumulative Performance Index (CPI) based on several input metrics.
 # It processes error metrics (RMSEC, RMSECV, RMSEP), bias metrics (BIASC, BIASCV, BIASP), and R2 values,
 # and then applies a principal component analysis (PCA) to weight the metrics before calculating the CPI.
 CPI_dataframe <- function(ID, RMSEC, RMSECV = NA, RMSEP = NA, BIASC, BIASCV = NA, BIASP = NA, R2C, R2CV = NA, R2P = NA, BIAS_thres = NA, PCA_var = 0.95, scale = TRUE){
   
-  # If RMSECV is provided (i.e., not just a single NA), compute the ratio of RMSEC to RMSECV.
+  # If length(RMSECV) != 1, compute abs(RMSECV / RMSEC - 1); this is a length check, not an NA check.
   if(!length(RMSECV) == 1){
     RMSEC_CV_ratio <- metric_ratio(RMSEC, RMSECV)
   } else {
     RMSEC_CV_ratio <- NA  # Otherwise, assign NA.
   }
   
-  # If RMSEP is provided, compute the ratio of RMSEC to RMSEP.
+  # If length(RMSEP) != 1, compute abs(RMSEP / RMSEC - 1).
   if(!length(RMSEP) == 1){
     RMSEC_P_ratio <- metric_ratio(RMSEC, RMSEP)
   } else {
@@ -46,68 +46,68 @@ CPI_dataframe <- function(ID, RMSEC, RMSECV = NA, RMSEP = NA, BIASC, BIASCV = NA
   # Process the BIASC metric if a bias threshold is provided and BIASC is not a single value.
   if (!is.na(BIAS_thres) & !length(BIASC) == 1){
     BIASC <- abs(BIASC)  # Use absolute values.
-    # If all BIASC values are below the bias threshold, set BIASC to NA.
+    # Set BIASC to NA if the strict '<' comparison contains no FALSE (including comparisons with NA).
     if (!(FALSE %in% (BIASC < BIAS_thres))) {
       BIASC <- NA
     } else {
-      BIASC_raw <- BIASC  # Save the original BIASC values.
-      BIASC[which(BIASC <= BIAS_thres)] <- BIAS_thres  # Replace values below threshold with the threshold value.
+      BIASC_raw <- BIASC  # Save absolute BIASC values before threshold replacement, not the signed input.
+      BIASC[which(BIASC <= BIAS_thres)] <- BIAS_thres  # Replace values at or below the threshold.
       }
-  }
-  
-  # Compute the difference between BIASC and BIASCV if BIASC is provided.
-  if(!length(BIASC) == 1){
-    BIASC_CV_diff <- metric_diff(BIASC, BIASCV)
-  } else {
-    BIASC_CV_diff <- NA
   }
   
   # Process the BIASCV metric similarly if a bias threshold is provided.
   if (!is.na(BIAS_thres) & !length(BIASCV) == 1){
     BIASCV <- abs(BIASCV)  # Use absolute values.
-    # If all BIASCV values are below the bias threshold, set BIASCV to NA.
+    # Set BIASCV to NA if the strict '<' comparison contains no FALSE (including comparisons with NA).
     if (!(FALSE %in% (BIASCV < BIAS_thres))) {
       BIASCV <- NA
     } else {
-      BIASCV_raw <- BIASCV  # Save the original BIASCV values.
-      BIASCV[which(BIASCV <= BIAS_thres)] <- BIAS_thres  # Replace values below threshold.
+      BIASCV_raw <- BIASCV  # Save absolute BIASCV values before threshold replacement.
+      BIASCV[which(BIASCV <= BIAS_thres)] <- BIAS_thres  # Replace values at or below the threshold.
     }
   }
   
   # Process the BIASP metric in the same manner if a bias threshold is provided.
   if (!is.na(BIAS_thres) & !length(BIASP) == 1){
     BIASP <- abs(BIASP)  # Use absolute values.
-    # If all BIASP values are below the bias threshold, set BIASP to NA.
+    # Set BIASP to NA if the strict '<' comparison contains no FALSE (including comparisons with NA).
     if (!(FALSE %in% (BIASP < BIAS_thres))) {
       BIASP <- NA
     } else {
-      BIASP_raw <- BIASP  # Save the original BIASP values.
-      BIASP[which(BIASP <= BIAS_thres)] <- BIAS_thres  # Replace values below threshold.
+      BIASP_raw <- BIASP  # Save absolute BIASP values before threshold replacement.
+      BIASP[which(BIASP <= BIAS_thres)] <- BIAS_thres  # Replace values at or below the threshold.
       }
   }
   
-  # Compute the difference between BIASC and BIASP if BIASP is provided.
+  # Calculate both bias differences after all three bias-processing blocks.
+  if(!length(BIASC) == 1){
+    BIASC_CV_diff <- metric_diff(BIASC, BIASCV)
+  } else {
+    BIASC_CV_diff <- NA
+  }
+
+  # If length(BIASP) != 1, compare BIASC and BIASP after their bias-processing blocks.
   if(!length(BIASP) == 1){
     BIASC_P_diff <- metric_diff(BIASC, BIASP)
   } else {
     BIASC_P_diff <- NA
   }
   
-  # Compute the ratio of R2C to R2CV if R2CV is provided.
+  # If length(R2CV) != 1, compute abs(R2CV / R2C - 1).
   if(!length(R2CV) == 1){
     R2C_CV_ratio <- metric_ratio(R2C, R2CV)
   } else {
     R2C_CV_ratio <- NA
   }
   
-  # Compute the ratio of R2C to R2P if R2P is provided.
+  # If length(R2P) != 1, compute abs(R2P / R2C - 1).
   if(!length(R2P) == 1){
     R2C_P_ratio <- metric_ratio(R2C, R2P)
   } else {
     R2C_P_ratio <- NA
   }
   
-  # Combine all the input metrics and computed metrics into a data frame.
+  # Assemble 15 candidate indicators: nine original metrics and six derived indicators.
   newdata <- data.frame(RMSEC, RMSECV, RMSEC_CV_ratio, RMSEP, RMSEC_P_ratio,
                         BIASC, BIASCV, BIASC_CV_diff, BIASP, BIASC_P_diff, R2C_CV_ratio, R2C_P_ratio,
                         R2C, R2CV,  R2P)
@@ -121,15 +121,15 @@ CPI_dataframe <- function(ID, RMSEC, RMSECV = NA, RMSEP = NA, BIASC, BIASCV = NA
   # Adjust the ones vector to match the columns kept (first 12 columns).
   ones <- ones[NA_check[1:12]]
   
-  # Perform Principal Component Analysis (PCA) on the cleaned metrics.
+  # Perform PCA on retained metrics before maximum normalization or direction inversion.
   if (scale == TRUE){
-    pca <-prcomp(newdata, scale. = TRUE)  # Scale variables if 'scale' is TRUE.
+    pca <-prcomp(newdata, scale. = TRUE)  # Center (prcomp default) and scale to unit sample variance.
   } else {
     pca <-prcomp(newdata, center = TRUE)  # Otherwise, just center them.
   }
   pca.sum <- summary(pca)  # Summarize PCA results.
   
-  # Extract the proportion of variance explained by each principal component.
+  # Extract explained proportions as reported by summary(pca), including its rounding.
   prop.var <- pca.sum$importance[2,]
   # Extract the cumulative variance explained.
   cum.var <- pca.sum$importance[3,]
@@ -152,29 +152,29 @@ CPI_dataframe <- function(ID, RMSEC, RMSECV = NA, RMSEP = NA, BIASC, BIASCV = NA
     wgs.norm <- wgs / sum(wgs)
   }
   
-  # Normalize each metric by dividing by its maximum absolute value.
-  metrics.max <- apply(abs(newdata), 2, max)  # Maximum value for each metric.
-  metrics.norm <- sweep(abs(newdata), 2, metrics.max, '/')  # Scale metrics to [0,1].
+  # Normalize absolute metric values, including original R2 values, by each column's absolute maximum.
+  metrics.max <- apply(abs(newdata), 2, max)  # Maximum absolute value for each retained metric.
+  metrics.norm <- sweep(abs(newdata), 2, metrics.max, '/')  # In [0,1] only for finite, nonzero maxima.
   
-  # Adjust the sign of the first set of metrics using the ones vector.
-  # This flips the sign (multiplying by -1) and then adds 1, standardizing the direction.
+  # Apply 1 - normalized value to retained indicators from the first 12 candidate columns.
+  # Original R2C, R2CV and R2P columns are not inverted; their absolute values were normalized above.
   metrics.norm[,1:length(ones)] <- sweep(-1*metrics.norm[,1:length(ones)], 2, ones, '+')
   
   # Multiply each normalized metric by its corresponding weight.
   w.metrics <- sweep(metrics.norm, 2, wgs.norm, '*') 
-  # Sum the weighted metrics row-wise to calculate the Composite Performance Index (CPI).
+  # Sum the weighted metrics row-wise to calculate the Cumulative Performance Index (CPI).
   newdata$CPI <- apply(w.metrics, 1, sum)
   
   # Add the ID column to the final data frame.
   newdata <- data.frame(ID, newdata)
-  # Restore the original BIASC values to the data frame.
+  # Restore unthresholded absolute BIASC; BIASC_raw is undefined if its saving branch was skipped.
   newdata$BIASC <- BIASC_raw
-  # Restore the original BIASCV values if available.
+  # Restore unthresholded absolute BIASCV when its current length is not 1; this requires BIASCV_raw.
   if (!length(BIASCV) == 1){ newdata$BIASCV <- BIASCV_raw }
-  # Restore the original BIASP values if available.
+  # Restore unthresholded absolute BIASP when its current length is not 1; this requires BIASP_raw.
   if (!length(BIASP) == 1){ newdata$BIASP <- BIASP_raw }
    
-  # Return the data frame containing all metrics and the computed CPI.
+  # Return ID, retained metric columns, CPI and restored biases; PCA weights are not returned.
   return(newdata)
 }
 

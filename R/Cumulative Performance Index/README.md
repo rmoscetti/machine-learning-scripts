@@ -1,98 +1,88 @@
-# Cumulative Performance Index (CPI) calculation in R
+# Cumulative Performance Index (CPI) in R
 
-This project provides a set of R functions designed to compute a **Cumulative Performance Index (CPI)** from multiple model performance metrics. The CPI is derived from error measurements (e.g., calibration error, cross-validation error, prediction error), bias values, and R² statistics. By leveraging **Principal Component Analysis (PCA)**, the code weights and combines these metrics into a single, informative index for model evaluation.
+## Purpose
 
-## Overview
+The Cumulative Performance Index (CPI) combines several model-performance indicators into one score, using principal component analysis (PCA) to derive data-driven weights. **Higher CPI values indicate better overall performance within the evaluated model pool.**
 
-The repository includes the following functions:
+The mathematical definition is provided in [METHODS.md](METHODS.md).
 
-- **`metric_ratio`**  
-  Computes the relative ratio difference between a calibration value and a prediction.  
-  _Formula:_ `abs(cv_pred/cal - 1)`
+## Inputs and derived indicators
 
-- **`metric_diff`**  
-  Computes the absolute difference between a calibration value and a prediction.  
-  _Formula:_ `abs(cv_pred - cal)`
+Supply one aligned value per model for each available metric, calculated consistently for the same response variable:
 
-- **`CPI_dataframe`**  
-  Combines multiple input metrics (errors, biases, and R² values) into a data frame and performs PCA on these metrics. The PCA-derived weights are then used to calculate the Cumulative Performance Index (CPI). This function also handles data quality by checking for `NA` values and applying bias thresholds.
+| Metric | Calibration | Cross-validation | Prediction |
+| --- | --- | --- | --- |
+| Root mean squared error | `RMSEC` | `RMSECV` | `RMSEP` |
+| Bias | `BIASC` | `BIASCV` | `BIASP` |
+| Coefficient of determination | `R2C` | `R2CV` | `R2P` |
 
-- **`CPI`**  
-  A wrapper function for `CPI_dataframe` that returns only the computed CPI values for each observation.
+The script accepts these precomputed metrics and constructs six additional indicators:
 
-## Features
+- `abs(RMSECV / RMSEC - 1)`
+- `abs(RMSEP / RMSEC - 1)`
+- `abs(R2CV / R2C - 1)`
+- `abs(R2P / R2C - 1)`
+- `abs(BIASC - BIASCV)`
+- `abs(BIASC - BIASP)`
 
-- **Metric Calculations:**  
-  Calculates ratios and differences for error and bias metrics to standardize performance comparisons.
+**Both bias differences are calculated after taking absolute bias values and applying the supplied bias threshold to the biases involved.** The bias names in these two expressions refer to those processed values.
 
-- **Bias Handling:**  
-  Applies a user-defined threshold to bias metrics to ensure only meaningful differences contribute to the index.
+There are **up to 15 indicators with cross-validation metrics and up to 9 without them**. Columns containing missing values are excluded; unavailable metrics and bias-threshold exclusions can therefore reduce these counts.
 
-- **Principal Component Analysis (PCA):**  
-  Uses PCA to weight individual metrics based on their explained variance, thereby reducing dimensionality and emphasizing the most important performance aspects.
+## Procedure in brief
 
-- **Customizable Parameters:**  
-  Users can specify whether to scale data during PCA, set bias thresholds, and define the desired proportion of cumulative variance to be captured by the principal components.
+1. **Treat biases:** take absolute values and apply the user-supplied threshold. For complete data, a bias metric is excluded if all magnitudes are strictly below the threshold; otherwise values at or below it are replaced by the threshold.
+2. **Construct indicators:** combine the original metrics, relative deviations, and differences between processed biases; exclude columns containing `NA` or `NaN`.
+3. **Run PCA:** centre the retained indicators and, by default, scale them to unit variance. Retain the fewest PCs reaching the cumulative variance target `PCA_var` (default `0.95`).
+4. **Derive weights:** combine absolute loadings weighted by each selected PC's explained-variance proportion, and normalize the metric weights to sum to one.
+5. **Normalize and align direction:** divide absolute indicator values by their column maxima. Apply `1 - normalized value` to lower-is-better indicators, but not to the original R² metrics.
+6. **Calculate CPI:** sum the weighted indicators for each model.
 
-## Requirements
+## Usage
 
-- **R:**  
-  The code is written in R. Ensure that you have R installed on your system.  
-  [Download R](https://cran.r-project.org/)
+R and its standard `stats` package are sufficient; no contributed packages are required. From the repository root:
 
-- **Base R Packages:**  
-  The implementation uses base R functions such as `prcomp` for PCA, so no additional packages are required.
+```r
+source("R/Cumulative Performance Index/CPI_functions.r")
+```
 
-## Installation
+The main function has the following arguments:
 
-1. **Clone the repository:**
-    ```bash
-    git clone https://github.com/rmoscetti/machine-learning-scripts.git
-    ```
+```r
+CPI_dataframe(ID, RMSEC, RMSECV = NA, RMSEP = NA,
+              BIASC, BIASCV = NA, BIASP = NA,
+              R2C, R2CV = NA, R2P = NA,
+              BIAS_thres = NA, PCA_var = 0.95, scale = TRUE)
+```
 
-2. **Open the project in your preferred R environment (e.g., RStudio).**
+`ID` identifies models. Calibration metrics are required; CV and prediction metrics default to `NA`. Supply and document `BIAS_thres` in the units of the bias inputs. `PCA_var` sets the cumulative variance target; `scale = FALSE` requests centring without variance scaling. See the brief [implementation notes](METHODS.md#7-implementation-notes) before running an analysis.
 
-3. **Source the script:**
+This schematic example assumes that `metrics` contains the input columns and that `bias_threshold` has been specified for the analysis; it supplies no scientific data or recommended threshold:
 
-   In your R console or script, run:
-    ```r
-    source("R/Cumulative Performance Index/CPI_functions.r")
-    ```
+```r
+result <- CPI_dataframe(
+  ID = metrics$ID,
+  RMSEC = metrics$RMSEC, RMSECV = metrics$RMSECV, RMSEP = metrics$RMSEP,
+  BIASC = metrics$BIASC, BIASCV = metrics$BIASCV, BIASP = metrics$BIASP,
+  R2C = metrics$R2C, R2CV = metrics$R2CV, R2P = metrics$R2P,
+  BIAS_thres = bias_threshold
+)
+result$CPI
+```
 
-5. **Usage**
-    After sourcing the script, you can compute the CPI for your data by calling the `CPI` function.
+Omit `RMSECV`, `BIASCV`, and `R2CV` when CV metrics are unavailable. `CPI_dataframe` returns model identifiers, metric columns, and CPI values in input order. `CPI(...)` accepts the same arguments and returns only the CPI vector. The helpers `metric_ratio` and `metric_diff` calculate absolute relative deviations and absolute differences, respectively.
 
-   Below is an example:
-    ```r
-    # Example data (replace with your own values)
-    ID <- 1:10
-    RMSEC <- runif(10, min = 1, max = 2)        # Example calibration errors
-    RMSECV <- runif(10, min = 1.5, max = 2.5)     # Example cross-validation errors
-    RMSEP <- runif(10, min = 1.8, max = 2.8)      # Example prediction errors
-    BIASC <- runif(10, min = 0.05, max = 0.15)    # Example calibration bias values
-    BIASCV <- runif(10, min = 0.06, max = 0.16)   # Example cross-validation bias values
-    BIASP <- runif(10, min = 0.07, max = 0.17)    # Example prediction bias values
-    R2C <- runif(10, min = 0.8, max = 0.95)       # Example calibration R² values
-    R2CV <- runif(10, min = 0.75, max = 0.93)     # Example cross-validation R² values
-    R2P <- runif(10, min = 0.7, max = 0.9)        # Example prediction R² values
+## Interpretation and limits
 
-    # Set a bias threshold (if applicable) and PCA variance capture level
-    BIAS_thres <- 0.1
-    PCA_var <- 0.95
-    scale_data <- TRUE
+- The CPI is relative to the evaluated model pool. Including or removing models can change scores and rankings; **scores from different pools are not directly comparable**.
+- The retained indicator set also affects the score. **Scores based on different indicator sets are not directly comparable**.
+- PCA weights reflect the statistical structure of the supplied metrics, not their intrinsic scientific importance.
+- If prediction-set metrics enter a CPI used for ranking or selection, that prediction set contributes to selection and is not a completely independent final validation set.
+- Normalization uses absolute values, including for original R² metrics. Negative R² values lose their sign, which limits the usual higher-is-better interpretation.
+- The CPI alone does not provide uncertainty, statistical significance, or independent predictive validation.
 
-    # Compute the Cumulative Performance Index (CPI)
-    cpi_values <- CPI(ID, RMSEC, RMSECV, RMSEP, BIASC, BIASCV, BIASP, R2C, R2CV, R2P, BIAS_thres, PCA_var, scale_data)
-
-    # View the CPI values
-    print(cpi_values)
-    ```
-
-## Contributing
-Contributions to enhance functionality, improve documentation, or optimize performance are welcome. Please fork the repository and submit a pull request with your proposed changes.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+For reproducibility, retain the repository commit and algorithm version, R session information, model pool and order, metric definitions and values, data-partition procedures, retained indicator set, threshold and its rationale, and all function arguments. See [METHODS.md](METHODS.md) for the mathematical definition and operational requirements.
 
 ## Contact
-For any questions or suggestions, please contact me: rmoscetti@unitus.it
+
+Roberto Moscetti: rmoscetti@unitus.it
